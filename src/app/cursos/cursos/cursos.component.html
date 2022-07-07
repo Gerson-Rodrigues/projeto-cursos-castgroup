@@ -1,23 +1,26 @@
-<mat-card >
-  <mat-toolbar color="secondary">
-      Cursos Disponíveis
-  </mat-toolbar>
-<table mat-table [dataSource]="cursos" class="mat-elevation-z8">
+<mat-card>
+  <mat-toolbar color="secondary"> Cursos Disponíveis </mat-toolbar>
+  <div *ngIf="cursos$ | async as cursos; else carregando">
+    <table mat-table [dataSource]="cursos" class="mat-elevation-z8">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Curso</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Curso </th>
-    <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
-  </ng-container>
+      <!-- Categoria Column -->
+      <ng-container matColumnDef="categoria">
+        <th mat-header-cell *matHeaderCellDef>Categoria</th>
+        <td mat-cell *matCellDef="let element">{{ element.categoria }}</td>
+      </ng-container>
 
-  <!-- Categoria Column -->
-  <ng-container matColumnDef="categoria">
-    <th mat-header-cell *matHeaderCellDef> Categoria </th>
-    <td mat-cell *matCellDef="let element"> {{ element.categoria }} </td>
-  </ng-container>
-
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>&nbsp;
-</table>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <ng-template #carregando>
+    <div class="loading-progress-bar">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+  </ng-template>
 </mat-card>
