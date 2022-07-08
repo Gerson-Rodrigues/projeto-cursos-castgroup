@@ -15,7 +15,7 @@ export class CursosComponent implements OnInit {
 
   cursos$: Observable<Curso[]> ;
   //cursos: Curso[] = [];
-  displayedColumns = ['name', 'categoria'];
+  displayedColumns = ['name', 'categoria', 'acoes'];
 
   //CursosService: CursosService;
 
@@ -36,6 +36,10 @@ export class CursosComponent implements OnInit {
     //this.cursosService.lista().subscribe(cursos => this.cursos = cursos);
 
 
+  }
+
+  exclui(){
+    
   }
 
   onError(errorMsg: string) {
