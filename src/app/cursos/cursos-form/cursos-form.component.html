@@ -1,0 +1,34 @@
+<mat-card>
+  <mat-toolbar color="primary"> Cadastro de Cursos </mat-toolbar>
+
+
+  <mat-card-content>
+    <form [formGroup]="formulario">
+    <br/>
+      <mat-form-field color="accent" class="width">
+        <input matInput placeholder="Nome" formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field color="accent" class="width">
+        <mat-label>Categorias</mat-label>
+        <mat-select formControlName="category">
+          <mat-option value="Banco de dados"><b>Banco de dados</b></mat-option>
+          <mat-option value="Comportamento"><b>Comportamento</b></mat-option>
+          <mat-option value="Comunicação"><b>Comunicação</b>
+          </mat-option>
+          <mat-option value="Metodologia"><b>Metodologia</b></mat-option>
+          <mat-option value="Multiplataforma"><b>Multiplataforma</b>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" (click)="onSubmit()">Salvar</button>
+    <button mat-raised-button (click)="onCancel()">Cancelar</button>
+  </mat-card-actions>
+
+  <mat-card-footer align="end">
+    <i> Gerson Rodrigues</i>
+  </mat-card-footer>
+</mat-card>
