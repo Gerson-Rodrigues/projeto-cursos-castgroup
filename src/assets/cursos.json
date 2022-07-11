@@ -1,8 +1,0 @@
-[
-  { "_id": "1", "name":"Angular", "categoria":"Front-End"},
-  { "_id": "2", "name":"Java", "categoria": "Back-End"},
-  { "_id": "3", "name":"ReactJS", "categoria":"Front-End"},
-  { "_id": "4", "name":"Python", "categoria":"Back-End"},
-  { "_id": "5", "name":"C#", "categoria":"Back-End"},
-  { "_id": "6", "name":"Ruby", "categoria":"Back-End"}
-]

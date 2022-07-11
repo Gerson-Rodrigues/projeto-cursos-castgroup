@@ -3,24 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { SharedModule } from '../shared/shared.module';
-import { CursosRoutingModule } from './cursos-routing.module';
-import { CursosComponent } from './cursos/cursos.component';
-import { CursosFormComponent } from './cursos-form/cursos-form.component';
+import { CoursesRoutingModule } from './courses-routing.module';
+import { CoursesComponent } from './courses/courses.component';
+import { CourseFormComponent } from './course-form/course-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
 
 
 @NgModule({
   declarations: [
-    CursosComponent,
-    CursosFormComponent
+    CoursesComponent,
+    CourseFormComponent
   ],
   imports: [
     CommonModule,
-    CursosRoutingModule,
+    CoursesRoutingModule,
     AppMaterialModule,
     SharedModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ]
 })
-export class CursosModule { }
+export class CoursesModule { }
